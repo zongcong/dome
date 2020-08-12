@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="handleCopy('复制啦')">复制</button>
+<script>
+// 复制按钮
+function handleCopy(value) {
+  var input = document.createElement('input');
+  input.readOnly = 'readonly';
+  input.value = value;
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand('Copy');
+  document.body.removeChild(input);
+}
+</script>
+</body>
+</html>
